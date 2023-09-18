@@ -1,0 +1,48 @@
+{
+    "name": "@easyfe/vite-plugin-upload-test",
+    "version": "0.0.1",
+    "description": "基于vite的，上传资源到阿里云、腾讯云、minio等存储服务",
+    "main": "lib/index.js",
+    "module": "lib/index.esm.js",
+    "typings": "lib/index.d.ts",
+    "scripts": {
+        "start": "rollup -w -c",
+        "build": "rimraf lib && rollup -c",
+        "prepublish": "npm run build",
+        "lint": "eslint --fix --ext .js,.ts ./src"
+    },
+    "keywords": [
+        "rollup-plugin",
+        "vite-plugin"
+    ],
+    "files": [
+        "lib",
+        "LICENSE",
+        "CHANGELOG.md",
+        "README.md"
+    ],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "7.17.5",
+        "@babel/plugin-transform-runtime": "7.17.0",
+        "@babel/preset-env": "7.16.4",
+        "@babel/runtime-corejs3": "7.16.3",
+        "@easyfe/eslint-config-ts": "latest",
+        "@rollup/plugin-alias": "^5.0.0",
+        "@rollup/plugin-babel": "5.3.0",
+        "@rollup/plugin-commonjs": "21.0.2",
+        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-node-resolve": "13.0.6",
+        "@types/glob": "7.2.0",
+        "@types/node": "^20.5.9",
+        "cos-nodejs-sdk-v5": "^2.11.6",
+        "glob": "7.2.0",
+        "minio": "^7.1.1",
+        "rollup": "2.60.1",
+        "rollup-plugin-terser": "7.0.2",
+        "rollup-plugin-typescript2": "0.31.1",
+        "typescript": "4.5.2",
+        "vite": "2.8.6"
+    }
+}
