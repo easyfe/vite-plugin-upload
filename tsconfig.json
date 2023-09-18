@@ -1,24 +1,19 @@
 {
     "compilerOptions": {
         /* 基础配置 */
-        "target": "ESNext",
-        "module": "ESNext",
+        "target": "esnext",
         "lib": ["dom", "esnext"],
         "removeComments": false,
         "declaration": true,
-        "sourceMap": false,
+        "sourceMap": true,
 
         /* 强类型检查配置 */
         "strict": true,
         "noImplicitAny": false,
 
         /* 模块分析配置 */
-        "baseUrl": "./",
-        "outDir": "lib",
-        "paths": {
-            "@/*": ["./src/*"]
-        },
-        "types": ["node"],
+        "baseUrl": ".",
+        "outDir": "./lib",
         "esModuleInterop": true,
         "moduleResolution": "node",
         "resolveJsonModule": true

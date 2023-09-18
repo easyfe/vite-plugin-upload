@@ -20,9 +20,6 @@ devDependencies:
   '@easyfe/eslint-config-ts':
     specifier: latest
     version: 0.0.3(typescript@4.5.2)
-  '@rollup/plugin-alias':
-    specifier: ^5.0.0
-    version: 5.0.0(rollup@2.60.1)
   '@rollup/plugin-babel':
     specifier: 5.3.0
     version: 5.3.0(@babel/core@7.17.5)(rollup@2.60.1)
@@ -1346,19 +1343,6 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
-    dev: true
-
-  /@rollup/plugin-alias@5.0.0(rollup@2.60.1):
-    resolution: {integrity: sha512-l9hY5chSCjuFRPsnRm16twWBiSApl2uYFLsepQYwtBuAxNMQ/1dJqADld40P0Jkqm65GRTLy/AC6hnpVebtLsA==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-    dependencies:
-      rollup: 2.60.1
-      slash: 4.0.0
     dev: true
 
   /@rollup/plugin-babel@5.3.0(@babel/core@7.17.5)(rollup@2.60.1):
@@ -3996,11 +3980,6 @@ packages:
   /slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
-    dev: true
-
-  /slash@4.0.0:
-    resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
-    engines: {node: '>=12'}
     dev: true
 
   /slice-ansi@4.0.0:

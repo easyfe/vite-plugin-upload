@@ -29,7 +29,6 @@
         "@babel/preset-env": "7.16.4",
         "@babel/runtime-corejs3": "7.16.3",
         "@easyfe/eslint-config-ts": "latest",
-        "@rollup/plugin-alias": "^5.0.0",
         "@rollup/plugin-babel": "5.3.0",
         "@rollup/plugin-commonjs": "21.0.2",
         "@rollup/plugin-json": "^4.1.0",

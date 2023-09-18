@@ -6,14 +6,11 @@ import { terser } from "rollup-plugin-terser";
 import { babel } from "@rollup/plugin-babel";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import json from "@rollup/plugin-json";
-import alias from "@rollup/plugin-alias";
 
 const paths = {
     input: path.join(__dirname, "/src/index.ts"),
     output: path.join(__dirname, "/lib")
 };
-
-console.log("xxxxxxxxxxxx====", path.resolve(__dirname, "src"));
 
 export default {
     input: "src/index.ts",
@@ -35,10 +32,6 @@ export default {
     ],
     plugins: [
         json(),
-        // 路径别名
-        alias({
-            entries: [{ find: "@/", replacement: `${path.resolve(__dirname, "src")}/` }]
-        }),
         // 使得 rollup 支持 commonjs 规范，识别 commonjs 规范的依赖
         commonjs(),
         // 配合 commnjs 解析第三方模块
