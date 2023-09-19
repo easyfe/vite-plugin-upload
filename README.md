@@ -4,7 +4,11 @@
 
 ## 安装
 
-`npm i @easyfe/vite-plugin-upload -S`
+```typescript
+npm install -D @easyfe/vite-plugin-upload 
+
+pnpm add -D @easyfe/vite-plugin-upload 
+```
 
 ## 使用
 
@@ -26,7 +30,7 @@
 #### 使用
 
 ```typescript
-import {AliUploadPlugin,AliConfig} from "@easyfe/vite-plugin-upload"
+import { AliUploadPlugin, AliConfig } from "@easyfe/vite-plugin-upload";
 
 AliUploadPlugin({
     accessKeyId: "",
@@ -39,8 +43,6 @@ AliUploadPlugin({
     excludesExtra: ["map"]
 });
 ```
-
-
 
 ### 腾讯云
 
@@ -60,7 +62,7 @@ AliUploadPlugin({
 #### 使用
 
 ```typescript
-import {TencentUploadPlugin,TencentConfig} from "@easyfe/vite-plugin-upload"
+import { TencentUploadPlugin, TencentConfig } from "@easyfe/vite-plugin-upload";
 
 TencentUploadPlugin({
     secretId: "",
@@ -74,17 +76,15 @@ TencentUploadPlugin({
 });
 ```
 
-
-
 ### Minio
 
 #### 参数
 
 | 参数          | 类型     | 介绍                   |
 | ------------- | -------- | ---------------------- |
-| endPoint      | string   | 对象存储服务的URL      |
-| port          | number   | TCP/IP端口号           |
-| useSSL        | boolean  | 是否使用ssl            |
+| endPoint      | string   | 对象存储服务的 URL     |
+| port          | number   | TCP/IP 端口号          |
+| useSSL        | boolean  | 是否使用 ssl           |
 | accessKey     | string   | 密钥 id                |
 | secretKey     | string   | 密钥                   |
 | bucket        | string   | 桶名称                 |
@@ -97,7 +97,7 @@ TencentUploadPlugin({
 #### 使用
 
 ```typescript
-import {MinioUploadPlugin,MinioConfig} from "@easyfe/vite-plugin-upload"
+import { MinioUploadPlugin, MinioConfig } from "@easyfe/vite-plugin-upload";
 
 MinioUploadPlugin({
     endPoint: "",
@@ -113,4 +113,3 @@ MinioUploadPlugin({
     excludesExtra: ["map"]
 });
 ```
-
