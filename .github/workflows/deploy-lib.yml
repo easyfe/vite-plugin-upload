@@ -1,0 +1,39 @@
+name: Lib Deploy
+
+on:
+    push:
+        tags:
+            - "*"
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 16
+
+            - run: npm i -g pnpm
+            - run: pnpm install
+
+            - name: Build
+              run: pnpm build
+
+            - name: Deploy Lib
+              run: npm publish
+              env:
+                  NPM_TOKEN: ${{ secrets.EASYFE_NPM_TOKEN }}
+
+            - name: Get version
+              id: get_version
+              run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+            - name: Create Release
+              uses: actions/create-release@v1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  tag_name: ${{ steps.get_version.outputs.VERSION }}
+                  release_name: ${{ steps.get_version.outputs.VERSION }}
+                  draft: false
+                  prerelease: false

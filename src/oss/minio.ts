@@ -63,9 +63,17 @@ export default function (config: MinioConfig) {
             console.log(err);
         }
         //打印配置文件
-        const copyOption = JSON.parse(JSON.stringify(config));
-        delete copyOption.accessKey;
-        delete copyOption.secretKey;
+        const copyOption = {
+            endPoint: config.endPoint,
+            port: config.port,
+            useSSL: config.useSSL,
+            region: config.region,
+            bucket: config.bucket,
+            bucketName: config.bucketName,
+            remoteDir: config.remoteDir,
+            from: config.from,
+            excludesExtra: config.excludesExtra
+        };
         console.log("正在上传资源到oss,上传配置:\n", copyOption);
         //计算成功上传数量
         let successCount = 0;
