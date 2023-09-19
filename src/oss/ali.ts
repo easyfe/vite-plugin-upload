@@ -1,4 +1,4 @@
-import { getViteBase } from "../util";
+import { getViteBase } from "../utils";
 
 export default function () {
     const fn = async () => {

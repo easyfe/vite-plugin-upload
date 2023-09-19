@@ -1,5 +1,5 @@
 import COS from "cos-nodejs-sdk-v5";
-import { getViteBase, getUploadFiles } from "../util";
+import { getViteBase, getUploadFiles } from "../utils";
 import path from "path";
 
 export type TencentConfig = {

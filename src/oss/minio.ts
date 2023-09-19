@@ -1,5 +1,5 @@
 import Minio from "minio";
-import { getViteBase, getUploadFiles } from "../util";
+import { getViteBase, getUploadFiles } from "../utils";
 
 export type MinioConfig = {
     //对象存储服务的URL
