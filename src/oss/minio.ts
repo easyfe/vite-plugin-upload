@@ -64,8 +64,8 @@ export default function (config: MinioConfig) {
         }
         //打印配置文件
         const copyOption = JSON.parse(JSON.stringify(config));
-        delete copyOption.SecretId;
-        delete copyOption.SecretKey;
+        delete copyOption.accessKey;
+        delete copyOption.secretKey;
         console.log("正在上传资源到oss,上传配置:\n", copyOption);
         //计算成功上传数量
         let successCount = 0;

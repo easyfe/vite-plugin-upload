@@ -49,8 +49,8 @@ export default function (config: TencentConfig) {
         });
         //打印配置文件
         const copyOption = JSON.parse(JSON.stringify(config));
-        delete copyOption.SecretId;
-        delete copyOption.SecretKey;
+        delete copyOption.secretId;
+        delete copyOption.secretKey;
         console.log("正在上传资源到oss,上传配置:\n", copyOption);
         //执行上传操作
         const data = await cos.uploadFiles({
