@@ -5,9 +5,9 @@
 ## 安装
 
 ```typescript
-npm install -D @easyfe/vite-plugin-upload 
+npm install -D @easyfe/vite-plugin-upload
 
-pnpm add -D @easyfe/vite-plugin-upload 
+pnpm add -D @easyfe/vite-plugin-upload
 ```
 
 ## 使用
@@ -107,6 +107,38 @@ MinioUploadPlugin({
     secretKey: "",
     bucket: "",
     region: "",
+    bucketName: "",
+    remoteDir: "",
+    from: "dist",
+    excludesExtra: ["map"]
+});
+```
+
+### 华为云
+
+#### 参数
+
+| 参数          | 类型     | 介绍                   |
+| ------------- | -------- | ---------------------- |
+| server        | string   | endpoint 服务地址      |
+| accessKey     | string   | 密钥 id                |
+| secretKey     | string   | 密钥                   |
+| bucket        | string   | 桶名称                 |
+| bucketName    | string   | 桶下面的文件夹         |
+| remoteDir     | string   | 远程文件夹地址         |
+| from          | string   | 打包生成目录，dist     |
+| excludesExtra | string[] | 需要过滤的后缀 ["map"] |
+
+#### 使用
+
+```typescript
+import { HuaweiUploadPlugin, HuaweiConfig } from "@easyfe/vite-plugin-upload";
+
+HuaweiUploadPlugin({
+    server: "https://obs.cn-east-3.myhuaweicloud.com",
+    accessKey: "",
+    secretKey: "",
+    bucket: "",
     bucketName: "",
     remoteDir: "",
     from: "dist",
