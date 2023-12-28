@@ -44,8 +44,6 @@ export default function (config: HuaweiConfig) {
                 FilePath: item
             };
         });
-        //检查桶是否存在
-        await checkBucket(obsClient, config.bucket);
         //打印配置文件
         const copyOption = {
             server: config.server,
@@ -101,25 +99,4 @@ export default function (config: HuaweiConfig) {
         console.log(`\n上传结束，总共${filePathList.length}个文件,上传成功${successCount}个文件`);
     };
     return getViteBase(fn);
-}
-
-function checkBucket(obsClient, bucketName): Promise<boolean> {
-    return new Promise((resolve, reject) => {
-        obsClient.headBucket(
-            {
-                Bucket: bucketName
-            },
-            (err, result) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    if (result.CommonMsg.Status < 300) {
-                        resolve(true);
-                    } else if (result.CommonMsg.Status === 404) {
-                        reject(new Error("Bucket does not exist"));
-                    }
-                }
-            }
-        );
-    });
 }

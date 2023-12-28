@@ -1,6 +1,6 @@
 {
     "name": "@easyfe/vite-plugin-upload",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "基于vite的，上传资源到阿里云、腾讯云、minio等存储服务",
     "publishConfig": {
         "registry": "https://registry.npmjs.org",
